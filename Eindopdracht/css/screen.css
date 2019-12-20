@@ -1,0 +1,1186 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  src: url('../fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  src: url('../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Bungee Inline';
+  font-weight: 800;
+  
+  src: url('../fonts/Bungee_Inline/bungeeinline-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Faster One';
+  font-weight: 800;
+  src: url('../fonts/Faster_One/FasterOne-Regular.ttf') format('ttf');
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* colors */
+  /* --global-color-alpha-light: #a3a0fb80;
+  --global-color-alpha: #a3a0fb; */
+  --global-color-alpha-x-dark: #5a3f01;
+  --global-color-alpha-dark: #714f01;
+  --global-color-alpha: #E39E03;
+
+
+  --global-color-beta: 	#dd3309;
+
+  --global-color-gamma: #e1e705;
+
+  --global-color-delta: #c8fabd;
+
+  --global-color-epsilon: #1b3662;
+  --global-color-epsilon-light:#314a71;
+  --global-color-epsilon-x-light:#5f7291;
+
+  --global-color-neutral-xxxx-light: #fcf5e5;
+  --global-color-neutral-xxx-light: #f9ebcc;
+  --global-color-neutral-xx-light: #f6e1b3;
+  --global-color-neutral-x-light: #c9c4b7;
+  --global-color-neutral-light: #f1ce81;
+  --global-color-neutral: #808495;
+  --global-color-neutral-dark: #706d66;
+  --global-color-neutral-x-dark: #413c32;
+  --global-color-neutral-xx-dark: #292419;
+
+
+  /* Shadows */
+
+  /* border */
+
+  --global-borderRadius: 3px;
+  --global-borderWidth: 1px;  
+  --global-input-borderColor: var(--global-color-neutral-x-light);
+  --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+  --global-input-focus-borderColor: var(--global-color-alpha);
+  --global-input-focus-boxShadow: 0 0 0 3px #3385ff4d;
+
+  /* transitions */
+  --transition-alpha: 0.1s;
+
+  /* Whitespace */
+  --global-baseline: 8px;
+  --global-whitespace-xs: calc(var(--global-baseline) * 2);
+  --global-whitespace-sm: calc(var(--global-baseline) * 3);
+  --global-whitespace-md: calc(var(--global-baseline) * 4);
+  --global-whitespace-lg: calc(var(--global-baseline) * 5);
+  --global-whitespace-xl: calc(var(--global-baseline) * 6);
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
+  color: var(--global-color-neutral-dark);
+  background-color: var(--global-color-neutral-xxxx-light);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: var(--global-color-beta);
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--global-color-beta);
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+canvas{
+  max-width: 100%;
+  max-height: 100%;
+}
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  color: var(--global-color-alpha-dark);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+  list-style: none;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  transition: all var(--transition-alpha);
+  text-decoration: none;
+  outline-color: var(--color-alpha);
+  outline-width: medium;
+  outline-offset: 2px;
+  color: var(--global-color-alpha);
+}
+
+a:visited,
+a:active {
+  color: var(--global-color-alpha);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-alpha-light);
+}
+
+label,
+input {
+  display: block;
+}
+
+select {
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--color-neutral-light);
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  position: relative;
+  padding: 24px 24px 0;
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+  width: 100%;
+  background-color: #0348E3;
+}
+
+.o-container-password {
+  position: relative;
+  display: block;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*Contenct for landing page*/
+
+/*
+    Component: Mockupimg
+*/
+
+.c-stickyImg{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.c-landing__mockupImg{
+  height: auto;
+  width: 50%;
+}
+
+.c-landing__main{
+  display: flex;
+  color: var(--global-color-alpha-x-dark);
+}
+
+.c-landing__info{
+  text-align: center;
+  font-family: 'Source Sans Pro';
+  margin-top:200px;
+  padding: 30px;
+  width: 50%;
+}
+
+.c-landing__title2{
+  margin-top: 30px;  
+  font-family: 'Bungee Inline';
+}
+
+.c-landing__title{
+  font-family: 'Bungee Inline';
+  padding: 30px;
+}
+
+.c-landing__merch{
+  margin-top: 32px;
+  padding: 0 250px;
+}
+.c-merch__logo{
+  display: flex;
+  height: 50px;
+  padding: 100 0;
+}
+
+.c-merch__item{
+  width: 100%;
+  height: 50px;
+}
+
+.c-landing__text{
+
+}
+
+.c-landing__quote{
+  font-size: small;
+  color: var(--global-color-neutral-dark);
+}
+
+/*
+  Component: Fake Input
+  ---
+  Replacing checkboxes
+*/
+
+.c-option {
+  margin-right: var(--global-whitespace-sm);
+}
+
+.c-custom-option {
+  display: flex;
+  align-items: center;
+}
+
+.c-custom-option__symbol {
+  transform: scale(0.5);
+  transition: all var(--global-transitionTiming-alpha);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
+  opacity: 1;
+  fill: var(--global-color-alpha);
+  transform: none;
+}
+
+.c-option--hidden:active + .c-custom-option .c-custom-option__fake-input,
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input {
+  border-color: var(--global-input-focus-borderColor);
+  box-shadow: var(--global-input-focus-boxShadow);
+}
+
+.c-custom-option__fake-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--global-baseline) * 2);
+  height: calc(var(--global-baseline) * 2);
+  border: var(--global-borderWidth) solid var(--global-input-borderColor);
+  margin-right: var(--global-whitespace-sm);
+}
+
+.c-custom-option__fake-input--radio {
+  border-radius: 100%;
+}
+
+.c-custom-option__fake-input--checkbox {
+  border-radius: var(--global-borderRadius);
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+  opacity: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--global-color-alpha);
+  border-radius: 100%;
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  fill: var(--global-color-alpha);
+}
+
+/*
+    Componen: Password toggle
+*/
+
+.c-custom-password-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 14px;
+}
+
+@media (max-width: 992px){
+  .c-custom-password-toggle__symbol {
+    fill: var(--global-color-neutral-x-light);
+    width: calc(var(--global-baseline) * 5);
+    height: calc(var(--global-baseline) * 5);
+  }
+}
+
+@media (min-width: 992px){
+  .c-custom-password-toggle__symbol {
+    fill: var(--global-color-neutral-x-light);
+    width: calc(var(--global-baseline) / 2 * 5);
+    height: calc(var(--global-baseline) / 2 * 5);
+  }
+}
+
+.c-custom-password-toggle__fake-input {
+  border-radius: var(--global-borderRadius);
+}
+
+/* deze twee dingen gebeuren alletwee als de button gecheckt wordt!!!*/
+
+.c-custom-password-toggle__fake-input:checked + .c-custom-password-toggle__label .c-custom-password-toggle__symbol--show {
+  /* als checkbox checked(standaard uit), zet de showpassword op display none*/
+  display: none;
+}
+
+.c-custom-password-toggle__fake-input:checked + .c-custom-password-toggle__label .c-custom-password-toggle__symbol--hide {
+  /* als checkbox checked(standaard uit), zet de showpassword op display block*/
+  display: block;
+}
+
+/* dit is het hide-password symbooltje dat standaard uit staat en hieboven aangezet wordt wanneer de button checked is */
+.c-custom-password-toggle__symbol--hide {
+  /* staat standaard uit */
+  display: none;
+}
+
+.has-error {
+  --label-color: var(--global-color-error);
+  --input-borderColor: var(--global-color-error-transparent);
+}
+/*
+    Component: Label
+    ---
+    Website Image
+*/
+
+@media (max-width: 992px){
+  .c-label {
+    font-size: 26px;
+    color: var(--global-color-alpha);
+    padding-bottom: 8px;
+  }
+  
+  .c-label--option {
+    padding: 0 0 0 8px;
+  }
+}
+
+@media (min-width: 992px){
+  .c-label {
+    font-size: 1em;
+    color: var(--global-color-alpha);
+    padding-bottom: 8px;
+  }
+  
+  .c-label--option {
+    padding: 0 0 0 8px;
+  }
+}
+/*
+  Component: Graphs
+  ---
+  Graphs
+*/
+
+@media (max-width: 992px){
+  .c-app__graph{
+    display: grid;
+    grid-template-columns: 5% 90% 5% ;
+    grid-auto-rows: 50% 50%;
+    height: 1200px;
+  }
+  
+  .c-app__graph-weight{
+    display: block;
+    grid-column-start: 2;
+    grid-column-end: 3;  
+    grid-row-start: 0;
+    grid-row-end: 1;
+    padding: 16px;
+  }
+  
+  .c-app__graph-year{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 16px;
+  }
+}
+
+
+@media (min-width: 992px){
+  .c-app__graph{
+    display: grid;
+    grid-template-columns: 10% 20% 20% 20% 20% 10%;
+    grid-auto-rows: 100%;
+    height: 400px;
+  }
+  
+  .c-app__graph-weight{
+    display: block;
+    grid-column-start: 2;
+    grid-column-end: 4;  
+    padding: 16px;
+  }
+  
+  .c-app__graph-year{
+    grid-column-start: 4;
+    grid-column-end: 6;
+    padding: 16px;
+  }
+}
+
+/*
+    Component: World Map
+    ---
+    Website Image
+*/
+
+.c-worldMap__image{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.c-app__worldMap{
+  position: relative;
+  z-index: -1;
+}
+
+.marker{
+  height: 4px;
+  width: 4px;
+  background-color: var(--global-color-gamma);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.c-app__intro{
+  color: var(--global-color-alpha-dark);
+  font-family: 'Bungee Inline';
+  display: block;
+  text-align: center;
+  font-size: 2em;
+}
+
+.c-app__intro-main{
+  padding: 20vh 0;
+}
+
+.c-app__intro-page{
+  padding: 4em;
+}
+
+.c-app__intro-end{
+  padding-top: 4em;
+  padding-bottom: 2em;;
+}
+
+.c-app__intro-big{
+  font-size: 5em;
+}
+
+
+/*
+  Component: Button
+  ---
+  Form Button
+*/
+
+.c-button {
+  font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
+  font-size: 1em;
+  padding: 11px 16px;
+  line-height: 24px;
+  width: 100%;
+  border-radius: 30px;
+  background-color: var(--global-color-epsilon);
+  color: #ffffff;
+}
+
+.c-button:hover {
+  background-color: var(--global-color-epsilon-x-light);
+}
+
+.c-button:focus {
+  background-color: var(--global-color-epsilon);
+}
+
+.c-button:active {
+  background-color: var(--global-color-epsilon-light);
+  outline: none;
+}
+
+/*
+    Component: Card
+    ---
+    Card with box shadow
+*/
+
+@media(min-width: 992px){
+  .c-card {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.07);
+  }
+  
+  .c-card__header {
+    padding: 24px;
+    font-size: 2em;
+    font-weight: 600;
+  }
+  
+  .c-card__body,
+  .c-card__footer {
+    padding: 24px;
+  }
+  
+  .c-card__footer {
+    border-top: 1px solid #e2e3e7;
+  }
+  
+  .c-card__title {
+    font-size: 18px;
+  }
+  
+  .c-card__body > *:last-child,
+  .c-card__footer > *:last-child,
+  .c-card__body > *:last-child > *:last-child,
+  .c-card__footer > *:last-child > *:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+@media(max-width: 992px){
+  .c-card {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.07);
+  }
+  
+  .c-card__header {
+    padding: 24px;
+    font-weight: 600;
+  }
+  
+  .c-card__body,
+  .c-card__footer {
+    padding: 24px;
+  }
+  
+  .c-card__footer {
+    border-top: 1px solid #e2e3e7;
+  }
+  
+  .c-card__title {
+    font-size: 32px;
+  }
+  
+  .c-card__body > *:last-child,
+  .c-card__footer > *:last-child,
+  .c-card__body > *:last-child > *:last-child,
+  .c-card__footer > *:last-child > *:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+
+/*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+@media(max-width: 992px){
+  .c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 1px solid #e2e3e7;
+    border-radius: 3px;
+    font-family: 'Inter Web';
+    font-size: 26px;
+    padding: 11px 24px;
+    line-height: 35px;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .c-input:focus {
+    border-color: #3385ff;
+    box-shadow: var(--global-input-focus-boxShadow);
+  }
+}
+
+@media(min-width: 992px){
+  .c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 1px solid #e2e3e7;
+    border-radius: 3px;
+    font-family: 'Inter Web';
+    font-size: 16px;
+    padding: 11px 16px;
+    line-height: 24px;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .c-input:focus {
+    border-color: #3385ff;
+    box-shadow: var(--global-input-focus-boxShadow);
+  }
+}
+/*
+    Component: Forms
+    ---
+    Website form
+*/
+
+.c-form-field--option {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-app__logo{
+  padding: 25px 20px;
+}
+
+.c-app__logo-style {
+  line-height: 20px;
+  color: var(--global-color-alpha-dark);
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/*
+    Componen(: Loader
+*/
+
+.c-app__loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid var(--global-color-alpha-x-dark);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* 
+    Component: Nav
+    ---
+    Website NavBar
+*/
+
+@media (min-width: 992px){
+  .c-app__topbar{  
+    padding-left: 200px;
+    padding-right: 200px;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--global-color-neutral-xxxx-light);
+    justify-content: space-between;
+    z-index: 1;
+  }
+  
+  .c-app__topbar-nav{
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+    grid-row-start: 1;
+  }
+  
+  .c-topbar__item{
+    padding: 24px;
+    font-size: 1em;
+    line-height: 21px;
+  }
+}
+
+
+@media (max-width: 992px){
+  .c-app__topbar{  
+    padding-top: 36px;
+    padding-left: 48px;
+    padding-right: 48px;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--global-color-neutral-xxxx-light);
+    justify-content: space-between;
+    z-index: 1;
+  }
+  
+  .c-app__topbar-nav{
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+  }
+  
+  .c-topbar__item{
+    padding: 24px;
+    font-size: 36px;
+    line-height: 21px;
+  }
+}
+
+/*
+    Component: App
+*/
+
+
+.c-app__main{
+}
+
+.c-app__filter{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20vw;
+}
+
+
+@media (min-width: 992px) {
+  .c-app{
+  
+  }  
+}
+
+
+
+
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral {
+  color: var(--color-neutral);
+}
+
+.u-color-neutral-dark {
+  color: var(--color-neutral-dark);
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+  margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+@media(min-width: 992px){
+  .u-max-width-xs {
+    max-width: 27em !important;
+  }
+}
+
+@media(max-width: 992px){
+  .u-max-width-xs {
+    max-width: 50em !important;
+  }
+}
+
+
+.u-max-width-sm {
+  max-width: 39em !important;
+}
+
+.u-max-width-md {
+  max-width: 50em !important;
+}
+
+.u-max-width-lg {
+  max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+  text-align: center;
+}
+
+.u-align-center {
+  margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-sm {
+  font-size: 14px;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+  /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

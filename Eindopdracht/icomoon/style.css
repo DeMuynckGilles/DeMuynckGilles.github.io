@@ -1,0 +1,88 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.c-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.c-images {
+  width: 1.125em;
+}
+
+.c-connection {
+  width: 1.25em;
+}
+
+.c-books {
+  width: 1.125em;
+}
+
+.c-library {
+  width: 1.0625em;
+}
+
+.c-price-tags {
+  width: 1.25em;
+}
+
+.c-history {
+  width: 1.0625em;
+}
+
+.c-keyboard {
+  width: 1.125em;
+}
+
+.c-bubbles {
+  width: 1.125em;
+}
+
+.c-bubbles2 {
+  width: 1.125em;
+}
+
+.c-bubbles3 {
+  width: 1.125em;
+}
+
+.c-bubbles4 {
+  width: 1.125em;
+}
+
+.c-users {
+  width: 1.125em;
+}
+
+.c-menu2 {
+  width: 1.375em;
+}
+
+.c-menu3 {
+  width: 1.375em;
+}
+
+.c-menu4 {
+  width: 1.375em;
+}
+
+.c-volume-high {
+  width: 1.0625em;
+}
+
+.c-embed2 {
+  width: 1.25em;
+}
+
+.c-youtube2 {
+  width: 2.5087890625em;
+}

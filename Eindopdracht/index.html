@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>METEORS</title>
+  <meta name="description" content="This is my HTML5 boilerplate." />
+  <link rel="stylesheet" href="https://use.typekit.net/oij0mrt.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <script src="./script/handleData.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+
+</head>
+
+<body>
+  <div class="c-app" id='app'>
+    <div class="c-app__topbar">
+      <div class="c-app__logo">
+        <h1 class="c-app__logo-style">METEORS</h1>
+      </div>
+      <ul class="c-app__topbar-nav">
+        <li class="c-topbar__item">
+          <a href="#app" class="c-topbar__link">
+            Home
+          </a>
+        </li>
+        <li class="c-topbar__item">
+          <a href="#" class="c-topbar__link">
+            About
+          </a>
+        </li>
+        <li class="c-topbar__item">
+          <a href="#loginForm" class="c-topbarr__link">
+            Sign Up
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="c-app__intro c-app__intro-main">
+      Ever wanted to know more About
+      <br><span class="c-app__intro-big">METEORS</span>
+      <br>Well I'm showing you anyway!
+    </div>
+    <div class="c-app__main">
+      <div class="loader"></div>
+      <div class="c-app__graph">
+        <canvas class="c-app__graph-weight" id="weightChart"></canvas>
+        <canvas class="c-app__graph-year" id="yearChart"></canvas>
+      </div>
+      <div class="c-app__intro c-app__intro-page">See Where Meteors Have Fallen Over The Last Few Centuries</div>
+      <div class="c-app__worldMap">
+        <img class="c-worldMap__image" id="c-worldMap__image" src="./img/svg/WorldMap_New4.png">
+      </div>
+      <h1 class="c-app__intro c-app__intro-end">
+        Stay Updated for all Meteor News
+      </h1>
+      <section class="o-row o-row--lg o-row--body" id="loginForm">
+        <div class="o-container u-max-width-xs">
+          <form class="c-card js-form">
+            <div class="c-card__body">
+              <div class="c-card__header">
+                <h4 class="c-card__title u-align-text-center">
+                  Create an account
+                </h4>
+              </div>
+              <p class="c-form-field">
+                <label class="c-label" for="name">
+                  Name
+                </label>
+                <input class="c-input" type="name" name="name" id="name" required />
+              </p>
+              <p class="c-form-field">
+                <label class="c-label" for="firstName">
+                  First name
+                </label>
+                <input class="c-input" type="firstName" name="firstName" id="firstName" required />
+              </p>
+              <p class="c-form-field">
+                <label class="c-label" for="eMail">
+                  Email address
+                </label>
+                <input class="c-input" type="eMail" name="eMail" id="eMail" required />
+              </p>
+              <p class="c-form-field">
+                <label class="c-label" for="Password" id="passwordLabel">
+                  Password
+                </label>
+                <span class="o-container-password">
+                  <input class="c-input" type="Password" name="Password" id="Password" required />
+                  <span class="c-custom-password-toggle">
+                    <input class="o-hide-accessible c-custom-password-toggle__fake-input" type="checkbox"
+                      id="passwordtoggle" />
+                    <label class="c-custom-password-toggle__label" for="passwordtoggle">
+                      <svg class="c-custom-password-toggle__symbol c-custom-password-toggle__symbol--show"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path
+                          d="M6.4,133.876a11,11,0,0,1,19.571-.061l.029.061a11,11,0,0,1-19.571.061l-.029-.061Zm9.8,4a4,4,0,1,0,0-8h0a4,4,0,0,0,0,8Zm0-2a2,2,0,0,1,0-4h0a2,2,0,1,1,0,4Z"
+                          transform="translate(-6.2 -123.876)" />
+                      </svg>
+                      <svg class="c-custom-password-toggle__symbol c-custom-password-toggle__symbol--hide"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path
+                          d="M19.009,73.18l-1.77,1.78a3.908,3.908,0,0,0-1.037-.137,4,4,0,0,0-3.857,5.065l-.007-.028-2.76,2.75A11.106,11.106,0,0,1,6.4,78.82,11.014,11.014,0,0,1,19.076,73.2L19,73.18Zm3.8,1.85a11.163,11.163,0,0,1,3.2,3.79,11.014,11.014,0,0,1-12.7,5.622l.077.018,1.77-1.78a3.907,3.907,0,0,0,1.037.137,4,4,0,0,0,3.857-5.065l.007.028,2.76-2.75Zm-.25-3.99,1.42,1.42L9.839,86.6l-1.42-1.42Z"
+                          transform="translate(-6.199 -68.82)" />
+                      </svg>
+                  </span>
+                </span>
+              </p>
+              <p class="c-form-field c-form-field--option">
+                <input class="c-option c-option--hidden o-hide-accessible c-custom-option__fake-input--checkbox"
+                  type="checkbox" id="terms" checked required />
+                <label class="c-label c-label--option c-custom-option" for="terms">
+                  <span class="c-custom-option__fake-input c-custom-option__fake-input--checkbox">
+                    <svg class="c-custom-option__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6.75">
+                      <path
+                        d="M4.75,9.5a1,1,0,0,1-.707-.293l-2.25-2.25A1,1,0,1,1,3.207,5.543L4.75,7.086,8.793,3.043a1,1,0,0,1,1.414,1.414l-4.75,4.75A1,1,0,0,1,4.75,9.5"
+                        transform="translate(-1.5 -2.75)" />
+                    </svg>
+                  </span>
+                  I accept the terms and conditions
+                </label>
+              </p>
+              <p>
+                <input type="button" class="o-button-reset c-button js-save" value="Register" id="Register" />
+              </p>
+            </div>
+            <div class="c-card__footer u-align-text-center u-text-sm u-text-lightgrey">
+              <p>Aleady have an account? <a href="#">Sign in</a></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
